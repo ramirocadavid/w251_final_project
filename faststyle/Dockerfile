@@ -34,6 +34,10 @@ RUN apt install -y \
     libswscale-dev \
     wget
 
+RUN apt install -y \
+    inotify-tools \ 
+    tmux 
+
 RUN pip3 install jupyter
 #RUN pip3 install pandas
 
