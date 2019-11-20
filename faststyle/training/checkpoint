@@ -1,0 +1,2 @@
+model_checkpoint_path: "lookon.ckpt-0"
+all_model_checkpoint_paths: "lookon.ckpt-0"
