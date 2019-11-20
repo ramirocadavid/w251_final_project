@@ -176,7 +176,7 @@ Jetson (stream video) -> Event Streams (receives video) + Cloudant (stored model
         return params
     ```
 
-4. Deploy function from the Python file.
+    Deploy function from the Python file.
 
     ```bash
     ibmcloud fn action create process_change process_change.py --kind python:3.6
