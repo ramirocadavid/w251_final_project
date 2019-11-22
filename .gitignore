@@ -1,1 +1,10 @@
 desktop.ini
+test_ramiro/
+.gitignore
+vgg16_weights.npz
+t6.5.32-1+cuda10.0_amd.deb
+*.zip
+*.tmp
+*__pycache__
+*.swp
+.gitignore
