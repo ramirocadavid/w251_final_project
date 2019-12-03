@@ -8,3 +8,7 @@ t6.5.32-1+cuda10.0_amd.deb
 *__pycache__
 *.swp
 .gitignore
+models_fast
+node_modules
+react-flask/
+*.mp4

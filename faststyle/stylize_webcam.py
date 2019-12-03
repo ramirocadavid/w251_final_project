@@ -49,6 +49,7 @@ if __name__ == '__main__':
 
     # Instantiate video capture object.
     cap = cv2.VideoCapture(1)
+    print(cap)
 
     # Set resolution
     if resolution is not None:
