@@ -117,7 +117,7 @@ class App extends Component {
         if (this.state.modelOutput) {
             if (this.state.fileType === "video/mp4") {
                 bodyContent = (
-                    <ReactPlayer url={this.state.modelOutput} controls='true' class='outputElement'/>
+                    <ReactPlayer url={this.state.modelOutput} controls={true} class='outputElement'/>
                 )
             } else {
                 bodyContent = (
