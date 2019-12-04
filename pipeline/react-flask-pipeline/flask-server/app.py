@@ -85,6 +85,7 @@ def video():
     data = request.files['file'].read()
     model = request.headers['Type']
     print(model, flush=True)
+
     with open('video.mp4', 'wb') as out_file:
         out_file.write(data)
 
@@ -132,7 +133,7 @@ def video():
         fourcc = cv2.VideoWriter_fourcc(*'X264')
         FILE_OUTPUT = 'video_stylized.mp4'
         out = cv2.VideoWriter(FILE_OUTPUT, fourcc, 20.0, (int(width), int(height)))
-
+        print("PASSED ERROR", flush=True)
         while video_stream.isOpened():
             ret, frame = video_stream.read()
 
