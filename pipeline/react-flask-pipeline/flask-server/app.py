@@ -130,10 +130,11 @@ def video():
         height = video_stream.get(4) # float
 
         # Define the codec and create VideoWriter object
-        fourcc = cv2.VideoWriter_fourcc(*'X264')
+        #fourcc = cv2.VideoWriter_fourcc(*'X264')
+        fourcc = cv2.VideoWriter_fourcc(*'MP4V')
         FILE_OUTPUT = 'video_stylized.mp4'
         out = cv2.VideoWriter(FILE_OUTPUT, fourcc, 20.0, (int(width), int(height)))
-        print("PASSED ERROR", flush=True)
+        #out = cv2.VideoWriter(FILE_OUTPUT, fourcc, 20.0, (x_new, y_new))
         while video_stream.isOpened():
             ret, frame = video_stream.read()
 
@@ -149,7 +150,8 @@ def video():
                 out.write(img_out)
             else:
                 break
-        
+
+        print("\nCHECKPOINT\n", flush=True)
         video_stream.release()
         out.release()
             
