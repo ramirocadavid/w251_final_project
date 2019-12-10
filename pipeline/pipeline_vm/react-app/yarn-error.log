@@ -1,0 +1,59 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-player
+
+PATH: 
+  C:\Users\ramir\Anaconda3;C:\Users\ramir\Anaconda3\Library\mingw-w64\bin;C:\Users\ramir\Anaconda3\Library\usr\bin;C:\Users\ramir\Anaconda3\Library\bin;C:\Users\ramir\Anaconda3\Scripts;C:\Users\ramir\Anaconda3\bin;C:\Users\ramir\Anaconda3\Scripts\condabin;C:\Users\ramir\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ramir\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\PuTTY;C:\WINDOWS\System32\OpenSSH;C:\cuda\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Users\ramir\Anaconda3;C:\Users\ramir\Anaconda3\Library\mingw-w64\bin;C:\Users\ramir\Anaconda3\Library\usr\bin;C:\Users\ramir\Anaconda3\Library\bin;C:\Users\ramir\Anaconda3\Scripts;C:\Users\ramir\AppData\Local\Microsoft\WindowsApps;C:\Users\ramir\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ramir\AppData\Local\Yarn\bin;C:\Users\ramir\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.19.2
+
+Node version: 
+  13.2.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, rmdir 'D:\Google Drive\2-Ciencia_de_datos\UC_Berkeley\10_W251_DL_edge_cloud\251_final_project\pipeline\react-flask-tensorflow\react-app\node_modules\http-signature\node_modules\.bin'
+
+npm manifest: 
+  {
+    "name": "react-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "griffith": "^1.5.0",
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0",
+      "react-scripts": "3.2.0",
+      "react-webcam": "^4.0.0",
+      "video-react": "^0.14.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

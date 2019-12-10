@@ -1,0 +1,2 @@
+model_checkpoint_path: "lookon_final.ckpt"
+all_model_checkpoint_paths: "lookon_final.ckpt"
