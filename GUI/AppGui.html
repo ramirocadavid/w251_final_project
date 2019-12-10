@@ -1,0 +1,213 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<!-- THIS IS A COMMENT -->
+<title>Neural Style Transfer with OpenCV</title>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.tt { font-family:monospace }
+.example { font-family:monospace; white-space:pre; overflow-x:auto; }
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
+</head>
+
+<body style="width:100%; max-width:1000px">
+
+<h1>Neural Style Transfer with OpenCV - W251 - Fall 2019</h2>
+
+<p>
+
+<a href="https://www.ischool.berkeley.edu/courses/datasci/251">MIDS 251</a><br>
+Fall 2019 semester
+<br>
+Team: Andy Cui, Edina Tankovic, Ramiro Cadavid, Sid Jakkamreddy
+<p>
+<!-- How to insert an image -->
+<img
+alt="Brief description"
+title="title=&#34;Text to show when mouse is hovered over this image&#34;"
+src="UCB-MIDS_homepage_hero_desktop_1440x500.jpg"
+style="width:100%;">
+<br>
+<span style="font-size:84%">
+<i>UC Berkeley</i>
+</span>
+
+
+<h2>Images Side by Side before and after style transfer</h2>
+<p><b>Some samples of our work: we trained our model on these 3 styles</b></p>
+
+<div class="row">
+  <div class="column">
+    <b>Starry Night Style</b>
+  </div>
+  <div class="column">
+    <b>Look On Style</b>
+  </div>
+  <div class="column">
+    <b>Candy Style</b>
+  </div>
+</div>
+<p>
+<div class="row">
+  <div class="column">
+    <img src="starry_night_crop.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="lookon.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="candy.jpg" alt="Snow" style="width:100%">
+  </div>
+</div>
+<p>
+<p><b>Results of style transferred Berkeley photo from above:</b></p>
+<div class="row">
+  <div class="column">
+    <img src="ucb_style_starry.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="ucb_style.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="ucb_style_candy.jpg" alt="Snow" style="width:100%">
+  </div>
+</div>
+
+<p>Some samples of our work: style transferred video</p>
+
+<div class="row">
+  <div class="column">
+    <iframe width="490" height="315" src=sample_video.mp4 frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="column">
+    <iframe width="490" height="315" src=sample_output_video.mp4 frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<h3 id="contents">CONTENTS</h3>
+
+
+<ol>
+<li><a href="#basics">Select style</a>
+<li><a href="#basics2">Upload a .jpg image to style</a>
+<li><a href="#basics3">Upload a .mp4 video to style</a>
+<li><a href="#basics4">Download and display result</a>
+</ol>
+<p>
+<hr>
+
+<h3 id="basics">1. Select style</h3>
+
+Chose an image you would like to extract styling from:
+<p>
+
+<select id="mySelect">
+  <option value="starry">Starry Night</option>
+  <option value="lookon">Lookon</option>
+  <option value="candy">Candy</option>
+</select>
+<p>
+
+
+
+<button type="button" onclick="myFunction()">Confirm</button>
+
+
+<p id="demo"></p>
+
+
+<form method="post" action="http://127.0.0.1:8080/confirm_selection?style=id="style"" enctype="multipart/form-data">
+    <input type="submit" />
+</form>
+
+
+<hr>
+<h3 id="basics2">2. Upload a .jpg image to style</h3>
+
+Please select a .jpg image file from your machine that you would like to have style converted and click submit button.
+
+<p>
+<form method="post" action="http://127.0.0.1:8080/upload" enctype="multipart/form-data">
+    <input type="file" name="ufile" />
+    <input type="submit" />
+</form>
+
+<p>
+
+<p>
+
+
+<hr>
+
+<h3 id="basics3">3. Upload a .mp4 video to style</h3>
+
+Please select a .mp4 video file from your machine that you would like to have style converted and click submit button.
+
+<p>
+
+
+<form method="post" action="http://127.0.0.1:8080/upload" enctype="multipart/form-data">
+    <input type="file" name="ufile" />
+    <input type="submit" />
+</form>
+
+
+<p>
+
+
+<hr>
+
+<h3 id="basics4">4. Download and display results</h3>
+
+
+<p>
+
+<a href="http://127.0.0.1:8080/check_output_ready">Check if the file is ready</a>
+<form method="post" action="http://127.0.0.1:8080/download" enctype="multipart/form-data">
+    <input type="submit" value="Download">
+</form>
+<p>
+<dl>
+<dt><i>More instructions:</I>
+
+      <p>Maybe the link to our documentation and GitHub?</p>
+      <br />
+      <iframe width="560" height="315" src=download.mp4 frameborder="0" allowfullscreen></iframe>
+      </iframe>
+
+
+</dl>
+
+<hr>
+
+<i>(End)</i>
+
+<hr>
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("style").innerHTML = x;
+}
+</script>
+<script>
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = x;
+</script>
+
+</body> <!-- close the <body> begun above -->
+</html> <!-- close the <html> begun above -->
