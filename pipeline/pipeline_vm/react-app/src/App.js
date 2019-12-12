@@ -43,7 +43,7 @@ class App extends Component {
             })
             // Process video
             if (file.type === 'video/mp4') {
-                fetch('http://localhost:5000/video', {
+                fetch('http://169.62.43.236:5000/video', {
                     method: 'POST',
                     headers: { 'Type': this.state.modelType },
                     body: data
@@ -65,7 +65,7 @@ class App extends Component {
                 console.log("ENTERED IMAGE")
                 getBase64(file)
                 .then(fileData => {
-                    fetch('http://localhost:5000/image', {
+                    fetch('http://169.62.43.236:5000/image', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'Type': this.state.modelType },
                         body: JSON.stringify({ file: fileData, 'Type': this.state.modelType })
@@ -95,7 +95,7 @@ class App extends Component {
             modelOutput: false,
             fileLoading: true,
         });
-        fetch('http://localhost:5000/image', {
+        fetch('http://169.62.43.236:5000/image', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Type': this.state.modelType },
             body: JSON.stringify({ file: screenshot })

@@ -132,7 +132,7 @@ def video():
         height = video_stream.get(4) # float
 
         # Define the codec and create VideoWriter object
-        fourcc = cv2.VideoWriter_fourcc(*'X264')
+        fourcc = cv2.VideoWriter_fourcc(*'MP4V')
         FILE_OUTPUT = 'video_stylized.mp4'
         out = cv2.VideoWriter(FILE_OUTPUT, fourcc, 20.0, (int(width), int(height)))
 
@@ -157,7 +157,7 @@ def video():
             
     # resp = send_file(FILE_OUTPUT, mimetype='video/mp4', attachment_filename='video.mp4')
     resp = send_file(FILE_OUTPUT)
-    resp.headers['Access-Control-Allow-Origin'] = '*'
+    #resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
 
